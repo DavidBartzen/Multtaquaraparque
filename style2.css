@@ -1,0 +1,502 @@
+/* RESET E CORES OFICIAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --azul-header: #1a3c4a;
+    --cinza-label: #e9f0f4;
+    --borda: #999;
+    --marrom-detalhe: #8b5e3c;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.container-ficha {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--borda);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* CABEÇALHO */
+.header-oficial { width: 100%;text-align: center; margin-bottom: 20px; }
+
+.logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.logos-row img { height: 290px; object-fit: contain; }
+
+.divisor-v {
+    width: 2px;
+    height: 35px;
+    background-color: var(--marrom-detalhe);
+}
+
+.titulo-doc {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-top: 2px solid var(--marrom-detalhe);
+    padding-top: 10px;
+}
+
+/* SEÇÕES E GRID */
+.barra-secao {
+    background-color: var(--azul-header);
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.grid-tabela {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-left: 1px solid var(--borda);
+    border-top: 1px solid var(--borda);
+}
+
+.celula {
+    border-right: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    display: flex;
+    align-items: stretch; /* Garante que a label ocupe toda a altura */
+    min-height: 40px;
+}
+
+.label {
+    background-color: var(--cinza-label);
+    color: #333;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    min-width: 110px;
+    border-right: 1px solid var(--borda);
+    text-transform: uppercase;
+}
+
+.celula input {
+    flex: 1;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* LARGURAS DAS COLUNAS */
+.col-12 { grid-column: span 12; }
+.col-10 { grid-column: span 10; }
+.col-8  { grid-column: span 8; }
+.col-6  { grid-column: span 6; }
+.col-4  { grid-column: span 4; }
+.col-2  { grid-column: span 2; }
+
+/* RODAPÉ E BOTÃO */
+.footer-form {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer-form p { font-size: 12px; color: #666; margin-bottom: 15px; }
+
+.btn-enviar {
+    background-color: var(--marrom-detalhe);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover { background-color: var(--azul-header); }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .grid-tabela { grid-template-columns: 1fr; }
+    .celula { grid-column: span 12 !important; }/* RESET E CORES OFICIAIS */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+:root {
+    --azul-header: #1a3c4a;
+    --cinza-label: #e9f0f4;
+    --borda: #999;
+    --marrom-detalhe: #8b5e3c;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    color: #333;
+}
+
+.container-ficha {
+    max-width: 950px; /* Aumentado levemente para caber os dados com folga */
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--borda);
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* CABEÇALHO (CORREÇÃO DAS LOGOS) */
+.header-oficial { 
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+
+.logos-row {
+    display: flex;
+    justify-content: space-between; /* Espalha as logos como no PDF */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.logos-row img { 
+    height: 65px; /* Tamanho maior para visibilidade */
+    width: auto;
+    object-fit: contain; 
+}
+
+.divisor-v {
+    width: 2px;
+    height: 45px;
+    background-color: var(--marrom-detalhe);
+}
+
+.titulo-doc {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-top: 2px solid var(--marrom-detalhe);
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+/* SEÇÕES */
+.barra-secao {
+    background-color: var(--azul-header);
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+/* GRID DA TABELA (ESTRUTURA TRAVADA) */
+.grid-tabela {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 colunas exatas */
+    border-left: 1px solid var(--borda);
+    border-top: 1px solid var(--borda);
+    width: 100%;
+}
+
+.celula {
+    border-right: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    display: flex;
+    align-items: stretch;
+    min-height: 42px;
+    background: #fff;
+}
+
+.label {
+    background-color: var(--cinza-label);
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    min-width: 110px; /* Largura padrão para as etiquetas */
+    border-right: 1px solid var(--borda);
+    text-transform: uppercase;
+}
+
+.celula input {
+    flex: 1;
+    min-width: 0; /* Impede o input de empurrar a tabela */
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+}
+
+/* CORREÇÕES ESPECÍFICAS DE LARGURA */
+.col-12 { grid-column: span 12; }
+.col-10 { grid-column: span 10; }
+.col-8  { grid-column: span 8; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+.col-2  { grid-column: span 2; }
+
+/* Ajuste para campos muito pequenos (N° e Estado) */
+.col-2 .label {
+    min-width: 45px; 
+    justify-content: center;
+    font-size: 9px;
+    padding: 0 5px;
+}
+
+/* RODAPÉ E BOTÃO */
+.footer-form {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-form p { 
+    font-size: 13px; 
+    color: #555; 
+    margin-bottom: 20px; 
+}
+
+.btn-enviar {
+    background-color: var(--marrom-detalhe);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-enviar:hover { 
+    background-color: var(--azul-header);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVIDADE (PARA CELULAR) */
+@media (max-width: 850px) {
+    .logos-row { flex-wrap: wrap; justify-content: center; }
+    .divisor-v { display: none; }
+    .logos-row img { height: 45px; margin: 10px; }
+    
+    .grid-tabela { grid-template-columns: 1fr; }
+    .celula { grid-column: span 12 !important; }
+    .label { min-width: 100px; }
+}
+    .label { min-width: 90px; font-size: 9px; }
+}
+
+/* Ajuste global para células de 12 colunas */
+.grid-tabela {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    width: 100%; /* Garante que não ultrapasse o container */
+}
+
+/* Ajuste para células pequenas (como N°) */
+.col-2 .label {
+    min-width: 40px; /* Label menor para campos pequenos */
+    justify-content: center;
+}
+
+.col-10 .label {
+    min-width: 100px;
+}
+
+/* Garante que o input preencha o restante do espaço */
+.celula input {
+    flex: 1;
+    min-width: 0; /* Previne que o input empurre a borda para fora */
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Classes de coluna */
+.col-10 { grid-column: span 10; }
+.col-5  { grid-column: span 5; }
+.col-3  { grid-column: span 3; }
+.col-2  { grid-column: span 2; }
+
+/* ESTILIZAÇÃO DOS CHECKBOXES */
+.pagamento-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px !important;
+    background-color: #fff;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid var(--borda);
+    border-radius: 3px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #f0f0f0;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--azul-header);
+    border-color: var(--azul-header);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* RODAPÉ DE ASSINATURAS */
+.assinaturas-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 10px;
+}
+
+.campo-assinatura {
+    width: 30%;
+    text-align: center;
+}
+
+.linha-assinatura {
+    border-top: 1px solid #000;
+    margin-bottom: 8px;
+}
+
+.campo-assinatura span {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ajuste Mobile para Assinaturas */
+@media (max-width: 768px) {
+    .assinaturas-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .campo-assinatura {
+        width: 100%;
+    }
+    .pagamento-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+.grid-tabela {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 colunas exatas */
+    width: 100%;
+    border-left: 1px solid var(--borda);
+    border-top: 1px solid var(--borda);
+    box-sizing: border-box; /* Garante que a borda não empurre o conteúdo */
+}
+
+.celula {
+    display: flex;
+    align-items: stretch;
+    border-right: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    background: #fff;
+    min-height: 40px;
+}
+
+/* AJUSTE CHAVE: Força a label a ter tamanho fixo */
+.label {
+    background-color: var(--cinza-label);
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    min-width: 110px; /* Alinhamento vertical com as outras linhas */
+    border-right: 1px solid var(--borda);
+    text-transform: uppercase;
+    flex-shrink: 0; /* Impede que a label "esmague" no campo de endereço */
+}
+
+/* Ajuste específico para o campo N° (label menor) */
+.col-2 .label {
+    min-width: 40px; 
+    justify-content: center;
+    padding: 0 5px;
+}
+
+.celula input {
+    flex: 1;
+    min-width: 0; /* Essencial para o input não empurrar a borda da grid */
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    outline: none;
+}
+

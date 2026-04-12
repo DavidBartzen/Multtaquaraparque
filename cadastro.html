@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Cadastro Oficial - MultiParque</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div class="container-ficha">
+        <header class="header-oficial">
+            <div class="logos-row">
+                <img src="assets/bannerform.jpg" alt="Banner Formulário">
+            </div>
+        </header>
+
+        <form id="formReservaCompleta">
+            
+            <div class="barra-secao">DADOS PESSOAIS</div>
+<div class="grid-tabela">
+    <div class="celula col-12"><span class="label">Nome Completo</span><input type="text" name="nome"></div>
+    
+    <div class="celula col-4"><span class="label">CPF</span><input type="text" name="cpf"></div>
+    <div class="celula col-4"><span class="label">RG</span><input type="text" name="rg"></div>
+    <div class="celula col-4"><span class="label">Nascimento</span><input type="date" name="data_nascimento"></div>
+
+    <div class="celula col-4"><span class="label">Estado Civil</span><input type="text" name="estado_civil"></div>
+    <div class="celula col-4"><span class="label">Profissão</span><input type="text" name="profissao"></div>
+    <div class="celula col-4"><span class="label">Renda Mensal</span><input type="text" name="renda"></div>
+
+    <div class="celula col-10"><span class="label">Endereço</span><input type="text" name="endereco"></div>
+    <div class="celula col-2"><span class="label">N°</span><input type="text" name="numero"></div>
+
+    <div class="celula col-5"><span class="label">Bairro</span><input type="text" name="bairro"></div>
+    <div class="celula col-5"><span class="label">Cidade</span><input type="text" name="cidade"></div>
+    <div class="celula col-2"><span class="label">Estado</span><input type="text" name="estado"></div>
+
+    <div class="celula col-6"><span class="label">Telefone</span><input type="tel" name="telefone"></div>
+    <div class="celula col-6"><span class="label">Email</span><input type="email" name="email"></div>
+</div>
+
+<div class="barra-secao">DADOS DO CÔNJUGE (SE CASADO)</div>
+<div class="grid-tabela">
+    <div class="celula col-12"><span class="label">Nome Completo</span><input type="text" name="conjuge_nome"></div>
+    
+    <div class="celula col-4"><span class="label">CPF</span><input type="text" name="conjuge_cpf"></div>
+    <div class="celula col-4"><span class="label">RG</span><input type="text" name="conjuge_rg"></div>
+    <div class="celula col-4"><span class="label">Nascimento</span><input type="date" name="conjuge_nascimento"></div>
+
+    <div class="celula col-4"><span class="label">Estado Civil</span><input type="text" name="conjuge_estado_civil"></div>
+    <div class="celula col-4"><span class="label">Profissão</span><input type="text" name="conjuge_profissao"></div>
+    <div class="celula col-4"><span class="label">Renda Mensal</span><input type="text" name="conjuge_renda"></div>
+
+    <div class="celula col-10"><span class="label">Endereço</span><input type="text" name="conjuge_endereco"></div>
+    <div class="celula col-2"><span class="label">N°</span><input type="text" name="conjuge_numero"></div>
+
+    <div class="celula col-5"><span class="label">Bairro</span><input type="text" name="conjuge_bairro"></div>
+    <div class="celula col-5"><span class="label">Cidade</span><input type="text" name="conjuge_cidade"></div>
+    <div class="celula col-2"><span class="label">Estado</span><input type="text" name="conjuge_estado"></div>
+</div>
+
+            <div class="barra-secao">LOTES DE INTERESSE</div>
+            <div class="grid-tabela">
+                <div class="celula col-4">
+                    <span class="label">1° OPÇÃO</span>
+                    <input type="text" name="lote_1">
+                </div>
+                <div class="celula col-4">
+                    <span class="label">2° OPÇÃO</span>
+                    <input type="text" name="lote_2">
+                </div>
+                <div class="celula col-4">
+                    <span class="label">3° OPÇÃO</span>
+                    <input type="text" name="lote_3">
+                </div>
+            </div>
+            <div class="barra-secao">CONDIÇÃO DE PAGAMENTO</div>
+<div class="grid-tabela">
+    <div class="celula col-12 pagamento-options">
+        <label class="checkbox-container">
+            <input type="checkbox" name="pagamento_vista">
+            <span class="checkmark"></span> À Vista
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="pagamento_curto">
+            <span class="checkmark"></span> Parcelamento Curto
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="pagamento_longo">
+            <span class="checkmark"></span> Parcelamento Longo
+        </label>
+    </div>
+</div>
+
+<div class="assinaturas-container">
+    <div class="campo-assinatura">
+        <div class="linha-assinatura"></div>
+        <span>Assinatura do Cliente</span>
+    </div>
+    <div class="campo-assinatura">
+        <div class="linha-assinatura"></div>
+        <span>Corretor(a)</span>
+    </div>
+    <div class="campo-assinatura">
+        <div class="linha-assinatura"></div>
+        <span>Imobiliária</span>
+    </div>
+</div>
+
+            <div class="footer-form">
+                <p>Os dados acima são para uso exclusivo de cadastro reserva.</p>
+                <button type="submit" class="btn-enviar">FINALIZAR E ENVIAR FICHA</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
