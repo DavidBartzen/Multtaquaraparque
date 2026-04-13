@@ -9,63 +9,105 @@
 <body>
 
     <header class="hero">
-        <div class="hero-container">
-            <div class="hero-content-left">
-                <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
-                <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
-                <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
-                <ul class="hero-features">
-                    <li>📍 Localização Estratégica</li>
-                    <li>🌳 27 mil m² de Lazer</li>
-                    <li>🚀 Obras Aceleradas</li>
-                </ul>
-            </div>
-
-            <div class="hero-form-card">
-                <div class="form-header">
-                    <h3>QUERO SABER MAIS</h3>
-                    <p>Preencha e receba a tabela de preços</p>
-                </div>
-                <form id="formLeadRapido">
-                    <div class="input-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(51) 99999-9999" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="objetivo">Objetivo</label>
-                        <select id="objetivo" name="objetivo" required>
-                            <option value="">Selecione...</option>
-                            <option value="morar">Quero Morar</option>
-                            <option value="investir">Quero Investir</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
-                </form>
-            </div>
+    <div class="hero-container">
+        <div class="hero-content-left">
+            <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
+            <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
+            <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
+            <ul class="hero-features">
+                <li>📍 Localização Estratégica</li>
+                <li>🌳 27 mil m² de Lazer</li>
+                <li>🚀 Obras Aceleradas</li>
+            </ul>
         </div>
-    </header>
+    </div>
+    <div class="hero-form-card">
+    <div class="form-header">
+        <h3>QUERO SABER MAIS</h3>
+        <p>Preencha e receba a tabela de preços</p>
+    </div>
+
+    <form id="formLeadRapido">
+        <div class="input-group">
+            <label>Nome Completo</label>
+            <input type="text" name="nome" placeholder="Ex: David Bartzen" required>
+        </div>
+        <div class="input-group">
+            <label>WhatsApp</label>
+            <input type="tel" name="whatsapp" placeholder="(51) 99999-9999" required>
+        </div>
+        <div class="input-group">
+            <label>Objetivo</label>
+            <select name="objetivo" required>
+                <option value="">Selecione...</option>
+                <option value="morar">Quero Morar</option>
+                <option value="investir">Quero Investir</option>
+            </select>
+        </div>
+        <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
+    </form>
+</div>
+    </div>
+</header>
 
     <section id="obras" class="obra-section">
-        <h2>Acompanhe o Progresso do Multiparque</h2>
+        <h1>Ola, seja bem vindo! Somos especialistas no setor imobiliário. Estamos aqui para responder a todas as suas perguntas e oferecer um atendimento personalizado. No que podemos te ajudar?</h1>
+            <div class="atendimento-whatsapp" style="text-align: center; margin-top: 20px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+    <p style="font-weight: bold; margin-bottom: 15px;">Prefere um atendimento imediato?</p>
+    <a href="https://wa.me/5551999178896?text=Olá! Estou no site do MultiParque Taquara e gostaria de mais informações." 
+       target="_blank" 
+       style="background-color: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="WhatsApp">
+       FALAR COM VENDEDOR AGORA
+    </a>
+</div> 
+            <h2>Acompanhe o Progresso do Multiparque</h2>
         <p>Fotos reais da infraestrutura em estágio avançado</p>
+        
         <div class="obra-grid">
-            <div class="obra-card"><img src="obra1.jpeg" alt="Obra 1"><div class="obra-label">Vista dos Lotes</div></div>
-            <div class="obra-card"><img src="obra2.jpeg" alt="Obra 2"><div class="obra-label">Pavimentação</div></div>
-            <div class="obra-card"><img src="obra3.jpeg" alt="Obra 3"><div class="obra-label">Infraestrutura</div></div>
+            <div class="obra-card">
+                <img src="obra1.jpeg" alt="Obras Multiparque">
+                <div class="obra-label">Vista dos Lotes</div>
+            </div>
+            <div class="obra-card">
+                <img src="obra2.jpeg" alt="Obras Multiparque">
+                <div class="obra-label">Pavimentação</div>
+            </div>
+            <div class="obra-card">
+                <img src="obra3.jpeg" alt="Obras Multiparque">
+                <div class="obra-label">Vista dos Lotes</div>
+            </div>
+            <div class="obra-card">
+                <img src="obra4.jpeg" alt="Obras Multiparque">
+                <div class="obra-label">Infraestrutura</div>
+            </div>
+            <div class="obra-card">
+                <img src="obra5.jpeg" alt="Obras Multiparque">
+                <div class="obra-label">Pavimentação Final</div>
+            </div>
         </div>
+        <div class="scroll-hint">Deslize para ver mais ➔</div>
     </section>
 
-    <section class="cta-final">
-        <div class="cta-container">
-            <h2>🔥 Oferta Exclusiva</h2>
-            <p>Condição especial apenas para clientes que se cadastrarem agora</p>
-            <button onclick="abrirOferta()" class="btn-oferta">QUERO GARANTIR MINHA CONDIÇÃO ESPECIAL</button>
+    <section class="info">
+        <h2>Mais de 27 mil m² de Lazer</h2>
+        <div class="grid">
+            <div class="item">🎾 Beach Tennis</div>
+            <div class="item">⚽ Campo de Futebol</div>
+            <div class="item">🚴 Ciclovia</div>
+            <div class="item">🧉 Chimarródromo</div>
         </div>
     </section>
+    <section class="cta-final">
+    <div class="cta-container">
+        <h2>🔥 Oferta Exclusiva</h2>
+        <p>Condição especial apenas para clientes que se cadastrarem agora</p>
+
+        <button onclick="abrirOferta()" class="btn-oferta">
+            QUERO GARANTIR MINHA CONDIÇÃO ESPECIAL
+        </button>
+    </div>
+</section>
 
     <footer>
         <p>© JBP Empreendimentos - Taquara/RS</p>
@@ -73,18 +115,28 @@
     </footer>
 
     <div id="modalOferta" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fecharModal()">&times;</span>
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        
+        <div id="secaoOferta">
             <h2>OFERTA EXCLUSIVA</h2>
             <p>Garanta sua unidade com condições de pré-lançamento.</p>
+
             <div class="preco-box">
                 <span class="de">DE: R$ 990,00 por mês</span>
                 <span class="por">POR: R$ 499,00* por mês</span>
             </div>
-            <button class="btn-submit" onclick="irParaCadastro()">PREENCHER FICHA DE RESERVA</button>
-            <p style="font-size: 0.7rem; margin-top: 15px; color: #666;">*Análise de crédito sujeita a aprovação.</p>
+
+            <button class="btn-submit" onclick="irParaCadastro()">
+                PREENCHER FICHA DE RESERVA
+            </button>
+            
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #666;">
+                *Ao clicar, você será redirecionado para a nossa ficha oficial de reserva.
+            </p>
         </div>
     </div>
+</div>
 
     <script src="script.js"></script>
 </body>
