@@ -8,44 +8,46 @@
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-container">
-            <div class="hero-content-left">
-                <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
-                <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
-                <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
-                <ul class="hero-features">
-                    <li>📍 Localização Estratégica</li>
-                    <li>🌳 27 mil m² de Lazer</li>
-                    <li>🚀 Obras Aceleradas</li>
-                </ul>
-            </div>
+<header class="hero">
+    <div class="hero-container">
+        <div class="hero-content-left">
+            <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
+            <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
+            <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
+            <ul class="hero-features">
+                <li>📍 Localização Estratégica</li>
+                <li>🌳 27 mil m² de Lazer</li>
+                <li>🚀 Obras Aceleradas</li>
+            </ul>
         </div>
-        <div class="hero-form-card"></div>
-        <div class="form-header">
-            <h3>QUERO SABER MAIS</h3>
-            <p>Preencha e receba a tabela de preços</p>
+
+        <div class="hero-form-wrapper">
+            <div class="form-header">
+                <h3>QUERO SABER MAIS</h3>
+                <p>Preencha e receba a tabela de preços</p>
+            </div>
+            <form id="formLeadRapido">
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Ex: nome completo" required>
+                </div>
+                <div class="input-group">
+                    <label>WhatsApp</label>
+                    <input type="tel" name="whatsapp" placeholder="(51) 99999-9999" required>
+                </div>
+                <div class="input-group">
+                    <label>Objetivo</label>
+                    <select name="objetivo" required>
+                        <option value="">Selecione...</option>
+                        <option value="morar">Quero Morar</option>
+                        <option value="investir">Quero Investir</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
+            </form>
         </div>
-        <form id="formLeadRapido">
-            <div class="input-group">
-                <label>Nome Completo</label>
-                <input type="text" name="nome" placeholder="Ex: nome completo" required>
-            </div>
-            <div class="input-group">
-                <label>WhatsApp</label>
-                <input type="tel" name="whatsapp" placeholder="(51) 99999-9999" required>
-            </div>
-            <div class="input-group">
-                <label>Objetivo</label>
-                <select name="objetivo" required>
-                    <option value="">Selecione...</option>
-                    <option value="morar">Quero Morar</option>
-                    <option value="investir">Quero Investir</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
-        </form>
-    </header>
+    </div>
+</header>
 
     <section id="obras" class="obra-section">
         <h1>Ola, seja bem vindo! Somos especialistas no setor imobiliário. Estamos aqui para responder a todas as suas perguntas e oferecer um atendimento personalizado. No que podemos te ajudar?</h1>
