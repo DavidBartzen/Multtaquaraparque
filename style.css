@@ -1,3 +1,8 @@
+Para resolver o problema da falta de fundo (grid) atrás do formulário e garantir que o layout fique impecável tanto no desktop quanto no mobile, aqui está o seu style.css completo e atualizado.
+
+Fiz um ajuste crucial: no mobile, o card agora força um fundo branco sólido (#ffffff) para que os campos não fiquem flutuando sobre a imagem da estrada, garantindo o contraste que você precisa.
+
+CSS
 /* ================== VARIÁVEIS ================== */
 :root {
     --primary-green: #2d4a22;
@@ -20,7 +25,7 @@ body {
     background-color: var(--light-bg);
     color: var(--dark-text);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+    overflow-x: hidden;
 }
 
 /* ================== HERO ================== */
@@ -33,15 +38,7 @@ body {
     background-attachment: fixed;
     display: flex;
     align-items: center;
-    padding: 100px 20px;
-}
-
-/* No Mobile, removemos o fixed para evitar bugs de renderização */
-@media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        padding: 60px 15px;
-    }
+    padding: 80px 20px;
 }
 
 .hero-container {
@@ -69,7 +66,7 @@ body {
 }
 
 .hero-content-left h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Fonte fluida */
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     line-height: 1.1;
     margin: 20px 0;
 }
@@ -86,31 +83,34 @@ body {
 .hero-features li {
     margin-bottom: 12px;
     font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
-/* FORM DIREITA */
+/* ================== FORMULÁRIO (CARD BRANCO) ================== */
 .hero-form-card {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 35px;
+    background: #ffffff; /* Fundo branco sólido */
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.3);
     width: 100%;
     max-width: 420px;
-    border: 1px solid rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 2;
 }
 
 .form-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form-header h3 {
     color: var(--primary-green);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 5px;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .input-group {
@@ -133,7 +133,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #f9f9f9;
-    font-size: 16px; /* Essencial para não dar zoom no iOS */
+    font-size: 16px; /* Evita zoom no iPhone */
+    color: #333;
 }
 
 .btn-submit {
@@ -154,7 +155,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ================== OBRA / GALERIA ================== */
+/* ================== SEÇÃO OBRAS ================== */
 .obra-section {
     padding: 80px 20px;
     background-color: var(--white);
@@ -167,11 +168,10 @@ body {
     overflow-x: auto;
     padding: 30px 10px;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
 }
 
 .obra-card {
-    flex: 0 0 280px;
+    flex: 0 0 300px;
     scroll-snap-align: center;
     border-radius: 12px;
     overflow: hidden;
@@ -180,56 +180,75 @@ body {
 
 .obra-card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
 }
 
-/* ================== MODAL ================== */
-.modal-content {
-    width: 95%;
-    max-width: 500px;
-    padding: 30px 20px;
+/* ================== GRID INFO ================== */
+.info {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.por {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-/* ================== AJUSTES RESPONSIVOS FINAIS ================== */
+.item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ================== AJUSTES MOBILE (AQUI ESTÁ A SOLUÇÃO) ================== */
 
 @media (max-width: 992px) {
+    .hero {
+        background-attachment: scroll; /* Melhora performance no celular */
+        padding: 40px 15px;
+        height: auto;
+    }
+
     .hero-container {
-        flex-direction: column;
+        flex-direction: column; /* Empilha texto e form */
         text-align: center;
-    }
-    
-    .hero-content-left {
-        max-width: 100%;
-    }
-
-    .hero-features {
-        display: inline-block;
-        text-align: left;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-form-card {
-        padding: 25px 20px;
     }
 
     .hero-content-left h1 {
         font-size: 2.2rem;
     }
 
-    .grid {
-        grid-template-columns: 1fr; /* Um item por linha no celular muito pequeno */
+    /* FORÇANDO O GRID BRANCO NO MOBILE */
+    .hero-form-card {
+        background: #ffffff !important; /* Branco puro para contraste */
+        margin-top: 30px;
+        padding: 30px 20px;
+        max-width: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        border: 1px solid #eee;
     }
 
-    .btn-oferta {
-        width: 100%;
-        padding: 15px;
-        font-size: 1rem;
+    .hero-features {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .obra-card {
+        flex: 0 0 260px;
     }
 }
