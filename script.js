@@ -1,16 +1,18 @@
+// CONFIGURAÇÃO SUPABASE
+// Pegue esses dados em: Settings > API no seu painel do Supabase
+const SUPABASE_URL = 'https://seu-projeto.supabase.co';
+const SUPABASE_KEY = 'sua-chave-anon-public';
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 /* CONTROLE DO MODAL */
 function abrirOferta() {
     const modal = document.getElementById('modalOferta');
-    if (modal) {
-        modal.style.display = 'flex';
-    }
+    if (modal) modal.style.display = 'flex';
 }
 
 function fecharModal() {
     const modal = document.getElementById('modalOferta');
-    if (modal) {
-        modal.style.display = 'none';
-    }
+    if (modal) modal.style.display = 'none';
 }
 
 function irParaCadastro() {
@@ -20,7 +22,7 @@ function irParaCadastro() {
 /* CARREGAMENTO E EVENTOS */
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Envio do Formulário
+    // Envio do Formulário para o Supabase
     const formLead = document.getElementById('formLeadRapido');
     if (formLead) {
         formLead.addEventListener('submit', async (e) => {
@@ -29,17 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData.entries());
 
             try {
-                await fetch('leads', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-            } catch (err) {
-                console.warn("Falha no salvamento silencioso");
-            }
+                // Insere os dados na tabela 'leads' do seu banco Postgres
+                const { error } = await _supabase
+                    .from('leads') 
+                    .insert([data]);
 
-            abrirOferta();
-            e.target.reset();
+                if (error) throw error;
+
+                console.log("Sucesso: Lead salvo no Supabase!");
+                abrirOferta(); // Abre o modal após o salvamento
+                e.target.reset();
+
+            } catch (err) {
+                console.error("Erro ao salvar no banco:", err.message);
+                // Mesmo com erro, abrimos o modal para não travar a experiência do usuário
+                abrirOferta();
+            }
         });
     }
 
@@ -64,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Fechar ao clicar fora
 window.onclick = (event) => {
     const modal = document.getElementById('modalOferta');
     if (event.target == modal) fecharModal();
