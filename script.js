@@ -59,37 +59,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const formFicha = document.getElementById('formReservaCompleta');
     if (formFicha) {
         formFicha.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-            // --- AJUSTE PARA CAMPOS DE CÔNJUGE VAZIOS ---
-            // Percorre todos os campos. Se estiver vazio, vira NULL.
-            for (let key in data) {
-                if (data[key] === "") {
-                    data[key] = null;
-                }
-            }
+    // Transforma campos vazios em NULL para o banco aceitar
+    for (let key in data) {
+        if (data[key] === "" || data[key] === undefined) {
+            data[key] = null;
+        }
+    }
 
-            // Captura os valores dos checkboxes (booleanos)
-            data.pagamento_vista = e.target.pagamento_vista?.checked || false;
-            data.pagamento_curto = e.target.pagamento_curto?.checked || false;
-            data.pagamento_longo = e.target.pagamento_longo?.checked || false;
+    // Garante que os checkboxes enviem TRUE ou FALSE (booleano)
+    data.pagamento_vista = !!e.target.pagamento_vista?.checked;
+    data.pagamento_curto = !!e.target.pagamento_curto?.checked;
+    data.pagamento_longo = !!e.target.pagamento_longo?.checked;
 
-            try {
-                const { error } = await _supabase
-                    .from('ficha_cadastro') 
-                    .insert([data]);
+    try {
+        const { error } = await _supabase
+            .from('ficha_cadastro') 
+            .insert([data]);
 
-                if (error) throw error;
+        if (error) throw error;
 
-                alert("Ficha de cadastro enviada com sucesso! Entraremos em contato.");
-                e.target.reset();
-            } catch (err) {
-                console.error("Erro na ficha de cadastro:", err.message);
-                alert("Erro ao enviar ficha: " + err.message);
-            }
-        });
+        alert("Ficha enviada com sucesso!");
+        e.target.reset();
+    } catch (err) {
+        console.error("Erro:", err.message);
+        alert("Erro ao enviar: " + err.message);
+    }
+});
     }
 
     // Efeito de Revelação (Scroll Reveal)
