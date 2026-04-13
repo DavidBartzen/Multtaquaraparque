@@ -8,80 +8,86 @@
 </head>
 <body>
 
-<header class="hero">
-    <div class="hero-container">
-        <div class="hero-content-left">
-            <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
-            <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
-            <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
-            <ul class="hero-features">
-                <li>📍 Localização Estratégica</li>
-                <li>🌳 27 mil m² de Lazer</li>
-                <li>🚀 Obras Aceleradas</li>
-            </ul>
-        </div>
-
-        <div class="hero-form-wrapper">
-            <div class="form-header">
-                <h3>QUERO SABER MAIS</h3>
-                <p>Preencha e receba a tabela de preços</p>
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-content-left">
+                <span class="tag-lancamento">LANÇAMENTO EXCLUSIVO</span>
+                <h1>MULTIPARQUE <br><span>TAQUARA</span></h1>
+                <p>O novo padrão de moradia que integra natureza e infraestrutura de alto nível.</p>
+                <ul class="hero-features">
+                    <li>📍 Localização Estratégica</li>
+                    <li>🌳 27 mil m² de Lazer</li>
+                    <li>🚀 Obras Aceleradas</li>
+                </ul>
             </div>
-            <form id="formLeadRapido">
-                <div class="input-group">
-                    <label>Nome Completo</label>
-                    <input type="text" name="nome" placeholder="Ex: nome completo" required>
+
+            <div class="hero-form-card">
+                <div class="form-header">
+                    <h3>QUERO SABER MAIS</h3>
+                    <p>Preencha e receba a tabela de preços</p>
                 </div>
-                <div class="input-group">
-                    <label>WhatsApp</label>
-                    <input type="tel" name="whatsapp" placeholder="(51) 99999-9999" required>
-                </div>
-                <div class="input-group">
-                    <label>Objetivo</label>
-                    <select name="objetivo" required>
-                        <option value="">Selecione...</option>
-                        <option value="morar">Quero Morar</option>
-                        <option value="investir">Quero Investir</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
-            </form>
+                <form id="formLeadRapido">
+                    <div class="input-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(51) 99999-9999" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="objetivo">Objetivo</label>
+                        <select id="objetivo" name="objetivo" required>
+                            <option value="">Selecione...</option>
+                            <option value="morar">Quero Morar</option>
+                            <option value="investir">Quero Investir</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
+                </form>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <section id="obras" class="obra-section">
-        <h1>Ola, seja bem vindo! Somos especialistas no setor imobiliário. Estamos aqui para responder a todas as suas perguntas e oferecer um atendimento personalizado. No que podemos te ajudar?</h1>
-        <div class="atendimento-whatsapp" style="text-align: center; margin-top: 20px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-            <p style="font-weight: bold; margin-bottom: 15px;">Prefere um atendimento imediato?</p>
+        <div class="welcome-text" style="max-width: 900px; margin: 0 auto 40px auto; padding: 0 20px;">
+            <h1 style="font-size: 1.4rem; line-height: 1.6; color: #444; font-weight: 500;">
+                Olá, seja bem-vindo! Somos especialistas no setor imobiliário. Estamos aqui para responder a todas as suas perguntas e oferecer um atendimento personalizado. No que podemos te ajudar?
+            </h1>
+        </div>
+
+        <div class="atendimento-whatsapp" style="text-align: center; margin-bottom: 50px; padding: 30px; background: #fdfdfd; border-radius: 12px; border: 1px solid #eee; display: inline-block; width: 100%; max-width: 500px;">
+            <p style="font-weight: bold; margin-bottom: 15px; color: #333;">Prefere um atendimento imediato?</p>
             <a href="https://wa.me/5551999178896?text=Olá! Estou no site do MultiParque Taquara e gostaria de mais informações." 
                 target="_blank" 
-                style="background-color: #25D366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" alt="WhatsApp">
+                style="background-color: #25D366; color: white; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="22" alt="WhatsApp">
                 FALAR COM VENDEDOR AGORA
             </a>
         </div> 
+
         <h2>Acompanhe o Progresso do Multiparque</h2>
         <p>Fotos reais da infraestrutura em estágio avançado</p>
         
         <div class="obra-grid">
             <div class="obra-card">
-                <img src="obra1.jpeg" alt="Obras Multiparque">
+                <img src="obra1.jpeg" alt="Vista dos Lotes Multiparque">
                 <div class="obra-label">Vista dos Lotes</div>
             </div>
             <div class="obra-card">
-                <img src="obra2.jpeg" alt="Obras Multiparque">
+                <img src="obra2.jpeg" alt="Pavimentação Multiparque">
                 <div class="obra-label">Pavimentação</div>
             </div>
             <div class="obra-card">
-                <img src="obra3.jpeg" alt="Obras Multiparque">
+                <img src="obra3.jpeg" alt="Lotes Disponíveis">
                 <div class="obra-label">Vista dos Lotes</div>
             </div>
             <div class="obra-card">
-                <img src="obra4.jpeg" alt="Obras Multiparque">
+                <img src="obra4.jpeg" alt="Infraestrutura Multiparque">
                 <div class="obra-label">Infraestrutura</div>
             </div>
             <div class="obra-card">
-                <img src="obra5.jpeg" alt="Obras Multiparque">
+                <img src="obra5.jpeg" alt="Pavimentação Final">
                 <div class="obra-label">Pavimentação Final</div>
             </div>
         </div>
@@ -97,11 +103,11 @@
             <div class="item">🧉 Chimarródromo</div>
         </div>
     </section>
+
     <section class="cta-final">
         <div class="cta-container">
             <h2>🔥 Oferta Exclusiva</h2>
             <p>Condição especial apenas para clientes que se cadastrarem agora</p>
-
             <button onclick="abrirOferta()" class="btn-oferta">
                 QUERO GARANTIR MINHA CONDIÇÃO ESPECIAL
             </button>
@@ -130,12 +136,13 @@
                     PREENCHER FICHA DE RESERVA
                 </button>
             
-                <p style="font-size: 0.8rem; margin-top: 15px; color: #666;">
-                    *Ao clicar, você será redirecionado para a nossa ficha oficial de reserva.
+                <p style="font-size: 0.8rem; margin-top: 15px; color: #666; line-height: 1.4;">
+                    *Ao clicar, você será redirecionado para a nossa ficha oficial de reserva para análise de crédito e garantia da unidade.
                 </p>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
