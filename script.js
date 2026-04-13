@@ -1,7 +1,7 @@
 // CONFIGURAÇÃO SUPABASE
 // 1. CONFIGURAÇÃO DO SUPABASE
-const SUPABASE_URL = 'SUA_URL_AQUI';
-const SUPABASE_KEY = 'SUA_CHAVE_ANON_AQUI';
+const SUPABASE_URL = 'https://ryeawlbuougixqbxwlmc.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZWF3bGJ1b3VnaXhxYnh3bG1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5ODcyMjMsImV4cCI6MjA5MTU2MzIyM30.zQzYiLW686aYXpPouEa9IBy0KScqhSlHtNwuPtepANk';
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* 2. CONTROLE DO MODAL */
