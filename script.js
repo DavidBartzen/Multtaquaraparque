@@ -1,4 +1,3 @@
-// CONFIGURAÇÃO SUPABASE
 // 1. CONFIGURAÇÃO DO SUPABASE
 const SUPABASE_URL = 'https://ryeawlbuougixqbxwlmc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5ZWF3bGJ1b3VnaXhxYnh3bG1jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5ODcyMjMsImV4cCI6MjA5MTU2MzIyM30.zQzYiLW686aYXpPouEa9IBy0KScqhSlHtNwuPtepANk';
@@ -34,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
 
+            // Limpeza de campos vazios para este form também
+            for (let key in data) {
+                if (data[key] === "") data[key] = null;
+            }
+
             try {
                 const { error } = await _supabase
                     .from('leads_rapidos') 
@@ -42,11 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (error) throw error;
 
                 console.log("Lead rápido salvo com sucesso!");
-                abrirOferta(); // Abre o modal de oferta após o cadastro rápido
+                abrirOferta();
                 e.target.reset();
             } catch (err) {
                 console.error("Erro no lead rápido:", err.message);
-                // Mesmo se falhar o banco, abrimos o modal para não frustrar o usuário
                 abrirOferta();
             }
         });
@@ -59,6 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
+
+            // --- AJUSTE PARA CAMPOS DE CÔNJUGE VAZIOS ---
+            // Percorre todos os campos. Se estiver vazio, vira NULL.
+            for (let key in data) {
+                if (data[key] === "") {
+                    data[key] = null;
+                }
+            }
 
             // Captura os valores dos checkboxes (booleanos)
             data.pagamento_vista = e.target.pagamento_vista?.checked || false;
@@ -81,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Efeito de Revelação (Scroll Reveal) para os itens da página
+    // Efeito de Revelação (Scroll Reveal)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -98,13 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Modal Automático após 1.5 segundos na home
     if (formLead) {
         setTimeout(abrirOferta, 1500);
     }
 });
 
-// Fechar modal ao clicar fora da caixa branca
 window.onclick = (event) => {
     const modal = document.getElementById('modalOferta');
     if (event.target == modal) fecharModal();
