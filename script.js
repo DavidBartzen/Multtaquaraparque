@@ -30,10 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (formLead) {
         formLead.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            // Feedback visual no botão
+            const btn = e.target.querySelector('button');
+            const textoOriginal = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = "ENVIANDO...";
+
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
 
-            // Limpeza de campos vazios para este form também
+            // Limpeza de campos vazios
             for (let key in data) {
                 if (data[key] === "") data[key] = null;
             }
@@ -45,12 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (error) throw error;
 
-                console.log("Lead rápido salvo com sucesso!");
-                abrirOferta();
-                e.target.reset();
+                // NOTIFICAÇÃO DE SUCESSO NO SITE
+                alert("✅ Sucesso! Seu cadastro foi realizado. Confira nossa oferta especial!");
+                
+                e.target.reset(); // Limpa os campos
+                abrirOferta();    // Abre o modal de oferta
+
             } catch (err) {
                 console.error("Erro no lead rápido:", err.message);
-                abrirOferta();
+                alert("Erro ao enviar: " + err.message);
+            } finally {
+                // Restaura o botão
+                btn.disabled = false;
+                btn.innerText = textoOriginal;
             }
         });
     }
@@ -59,39 +73,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const formFicha = document.getElementById('formReservaCompleta');
     if (formFicha) {
         formFicha.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+            e.preventDefault();
 
-    // Transforma campos vazios em NULL para o banco aceitar
-    for (let key in data) {
-        if (data[key] === "" || data[key] === undefined) {
-            data[key] = null;
-        }
+            const btn = e.target.querySelector('button');
+            const textoOriginal = btn?.innerText;
+            if(btn) {
+                btn.disabled = true;
+                btn.innerText = "ENVIANDO FICHA...";
+            }
+
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+            // Transforma campos vazios em NULL
+            for (let key in data) {
+                if (data[key] === "" || data[key] === undefined) {
+                    data[key] = null;
+                }
+            }
+
+            // Garante que os checkboxes enviem booleano
+            data.pagamento_vista = !!e.target.pagamento_vista?.checked;
+            data.pagamento_curto = !!e.target.pagamento_curto?.checked;
+            data.pagamento_longo = !!e.target.pagamento_longo?.checked;
+
+            try {
+                const { error } = await _supabase
+                    .from('ficha_cadastro') 
+                    .insert([data]);
+
+                if (error) throw error;
+
+                alert("✅ Ficha enviada com sucesso! Entraremos em contato em breve.");
+                e.target.reset();
+            } catch (err) {
+                console.error("Erro:", err.message);
+                alert("Erro ao enviar ficha: " + err.message);
+            } finally {
+                if(btn) {
+                    btn.disabled = false;
+                    btn.innerText = textoOriginal;
+                }
+            }
+        });
     }
 
-    // Garante que os checkboxes enviem TRUE ou FALSE (booleano)
-    data.pagamento_vista = !!e.target.pagamento_vista?.checked;
-    data.pagamento_curto = !!e.target.pagamento_curto?.checked;
-    data.pagamento_longo = !!e.target.pagamento_longo?.checked;
-
-    try {
-        const { error } = await _supabase
-            .from('ficha_cadastro') 
-            .insert([data]);
-
-        if (error) throw error;
-
-        alert("Ficha enviada com sucesso!");
-        e.target.reset();
-    } catch (err) {
-        console.error("Erro:", err.message);
-        alert("Erro ao enviar: " + err.message);
-    }
-});
-    }
-
-    // Efeito de Revelação (Scroll Reveal)
+    // --- EFEITO DE REVELAÇÃO (Scroll Reveal) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -108,11 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Abre o modal automaticamente após 1.5s apenas se o formulário de lead existir (página inicial)
     if (formLead) {
         setTimeout(abrirOferta, 1500);
     }
 });
 
+// Fecha o modal ao clicar fora dele
 window.onclick = (event) => {
     const modal = document.getElementById('modalOferta');
     if (event.target == modal) fecharModal();
