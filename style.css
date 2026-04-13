@@ -1,185 +1,43 @@
-/* ================== VARIÁVEIS ================== */
-:root {
-    --primary-green: #2d4a22;
-    --accent-brown: #8b5e3c;
-    --light-bg: #f4f7f1;
-    --white: #ffffff;
-    --dark-text: #333;
-    --transition: 0.3s ease;
-}
-
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: var(--light-bg);
-    color: var(--dark-text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* ================== HERO ================== */
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('obra5.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
+/* ================== MODAL (CORRIGIDO) ================== */
+.modal {
+    display: none; /* Mantém escondido ao carregar a página */
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+    justify-content: center;
     align-items: center;
-    padding: 80px 20px;
+    padding: 20px;
 }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-}
-
-.hero-content-left {
-    flex: 1;
-    color: white;
-}
-
-.tag-lancamento {
-    background: var(--accent-brown);
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.hero-content-left h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1.1;
-    margin: 20px 0;
-}
-
-.hero-content-left h1 span { color: #a8d08d; }
-
-.hero-features { list-style: none; margin-top: 20px; }
-.hero-features li { margin-bottom: 12px; font-size: 1.1rem; }
-
-/* ================== FORMULÁRIO (GLASSMORPHISM) ================== */
-.hero-form-card {
-    /* Transparência elegante */
-    background: rgba(255, 255, 255, 0.85); 
-    /* Efeito de desfoque no fundo */
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
-    
-    padding: 40px;
+.modal-content {
+    background: white;
+    padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    max-width: 500px;
     width: 100%;
-    max-width: 420px;
-    position: relative;
-    z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.form-header { text-align: center; margin-bottom: 25px; }
-.form-header h3 { color: var(--primary-green); font-size: 1.5rem; margin-bottom: 5px; }
-.form-header p { font-size: 0.9rem; color: #444; }
-
-.input-group { margin-bottom: 15px; text-align: left; }
-.input-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; color: #333; }
-.input-group input, .input-group select {
-    width: 100%; padding: 14px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px;
-    background: rgba(255, 255, 255, 0.7); font-size: 16px; color: #333;
-}
-
-.btn-submit {
-    width: 100%; padding: 16px; background: var(--accent-brown); color: white;
-    border: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem;
-    cursor: pointer; transition: var(--transition);
-}
-
-.btn-submit:hover { background: var(--primary-green); transform: translateY(-2px); }
-
-/* ================== SEÇÕES DE CONTEÚDO ================== */
-.obra-section, .info, .cta-final {
-    width: 100%;
-    padding: 80px 20px;
     text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-.obra-section { background-color: var(--white); }
-
-.obra-grid {
-    display: flex; gap: 20px; overflow-x: auto; padding: 30px 10px;
-    scroll-snap-type: x mandatory;
+.preco-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid #eee;
 }
 
-.obra-card {
-    flex: 0 0 300px; scroll-snap-align: center; border-radius: 12px;
-    overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+.de { text-decoration: line-through; color: #999; display: block; }
+.por { font-size: 2.5rem; font-weight: bold; color: #2d4a22; display: block; }
 
-.obra-card img { width: 100%; height: 250px; object-fit: cover; }
-
-/* ================== GRID INFO ================== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto 0;
-}
-
-.item {
-    background: var(--white); padding: 25px; border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-bottom: 4px solid var(--primary-green);
-}
-
-/* ================== CTA FINAL ================== */
-.cta-final {
-    background: linear-gradient(135deg, #1f3a3d, #2d4a22);
-    color: white;
-}
-
-.cta-container { max-width: 800px; margin: 0 auto; text-align: center; }
-.cta-final h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px; }
-.cta-final p { margin-bottom: 30px; opacity: 0.9; }
-
-.btn-oferta {
-    background: var(--accent-brown); color: white; padding: 18px 35px;
-    border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
-    cursor: pointer; transition: var(--transition);
-}
-
-.btn-oferta:hover { background: #a47653; transform: scale(1.05); }
-
-/* ================== FOOTER ================== */
-footer { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; }
-
-/* ================== AJUSTES MOBILE ================== */
-@media (max-width: 992px) {
-    .hero { background-attachment: scroll; padding: 40px 15px; height: auto; }
-    .hero-container { flex-direction: column; text-align: center; }
-    
-    .hero-form-card {
-        background: rgba(255, 255, 255, 0.9) !important; /* Menos transparente no mobile para ler melhor */
-        margin-top: 30px;
-        padding: 30px 20px;
-        max-width: 100%;
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content-left h1 { font-size: 1.8rem; }
-    .grid { grid-template-columns: 1fr; }
-    .obra-card { flex: 0 0 280px; }
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #aaa;
 }
