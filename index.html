@@ -42,20 +42,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 1. Banner "Linha de Chegada" Centralizado (Corretor + Realizadores) -->
-<div class="brand-header" style="background: #ffffff; width: 100%; border-bottom: 2px solid #e0e0e0; padding: 15px 0; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+<style>
+    /* Estilo base para desktop - Centralizado e Simétrico */
+    .brand-header {
+        background: #ffffff;
+        width: 100%;
+        border-bottom: 2px solid #e0e0e0;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center; /* Mantém a simetria centralizada */
+        align-items: center;
+        gap: 30px;
+        flex-wrap: nowrap; /* Garante que fiquem sempre lado a lado */
+    }
     
-    <!-- [PRIMEIRO] Logo do Corretor Soares de Lima -->
+    .logo-corretor { 
+        height: 65px; 
+        width: auto; 
+        border-radius: 5px; 
+    }
+    
+    .divisor { 
+        width: 1px; 
+        height: 50px; 
+        background: #ddd; 
+    }
+    
+    .banner-realizadores { 
+        max-width: 480px; 
+        height: auto; 
+    }
+
+    /* Ajuste responsivo para celulares */
+    @media (max-width: 600px) {
+        .brand-header {
+            gap: 15px; /* Espaço otimizado para telas pequenas */
+            padding: 10px;
+        }
+        .logo-corretor { 
+            height: 40px; /* Redução proporcional para não ocupar a tela toda */
+        }
+        .divisor { 
+            height: 35px; 
+        }
+        .banner-realizadores { 
+            max-width: 220px; /* Ajuste para caber os 3 logos restantes */
+        }
+    }
+</style>
+
+<!-- Banner "Linha de Chegada" (Corretor + Realizadores) -->
+<div class="brand-header">
+    
+    <!-- Logo do Corretor Soares de Lima em 1º lugar -->
     <div style="display: flex; align-items: center;">
-        <img src="Logomarca .jpg" alt="Soares de Lima Corretor" style="height: 65px; width: auto; border-radius: 5px;">
+        <img src="Logomarca .jpg" alt="Soares de Lima Corretor" class="logo-corretor">
     </div>
 
-    <!-- Linha Divisória Vertical sutil -->
-    <div style="width: 1px; height: 50px; background: #ddd; display: block;"></div>
+    <!-- Linha Divisória Vertical -->
+    <div class="divisor"></div>
 
-    <!-- [SEGUNDO] Banner dos Realizadores e Donos (Bloque, MultiParque e JBP) -->
+    <!-- Banner dos Realizadores e Donos (Bloque, MultiParque e JBP) -->
     <div style="display: flex; align-items: center;">
-        <img src="Bannerhead.jpg" alt="Realizadores Multiparque" style="max-width: 480px; height: auto;">
+        <img src="Bannerhead.jpg" alt="Realizadores Multiparque" class="banner-realizadores">
     </div>
 </div>
 
