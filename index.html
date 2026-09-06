@@ -73,6 +73,15 @@
         height: auto; 
     }
 
+    /* Estilo para a mensagem da LGPD abaixo do botão */
+    .lgpd-notice {
+        font-size: 11px;
+        color: #666666;
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.3;
+    }
+
     /* Ajuste responsivo para celulares */
     @media (max-width: 600px) {
         .brand-header {
@@ -93,7 +102,6 @@
 
 <!-- Banner "Linha de Chegada" (Corretor + Realizadores) -->
 <div class="brand-header">
-    
     <!-- Logo do Corretor Soares de Lima em 1º lugar -->
     <div style="display: flex; align-items: center;">
         <img src="Logomarca .jpg" alt="Soares de Lima Corretor" class="logo-corretor">
@@ -110,9 +118,9 @@
 
 <!-- 2. Botão WhatsApp Flutuante (Permanente) -->
 <a href="https://wa.me/5551992201909?text=Olá! Estou no site do MultiParque Taquara e gostaria de mais informações." 
-   target="_blank" 
-   class="whatsapp-float" 
-   style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s;">
+    target="_blank" 
+    class="whatsapp-float" 
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
 </a>
 
@@ -152,11 +160,13 @@
                         </select>
                     </div>
                     <button type="submit" class="btn-submit">RECEBER INFORMAÇÕES</button>
+                    <p class="lgpd-notice">Ao confirmar, você concorda em receber mensagens e atendimento exclusivo do nosso corretor credenciado via WhatsApp.</p>
                 </form>
             </div>
         </div>
     </header>
 
+    <section class="obras">
         <h2>Acompanhe o Progresso do Multiparque</h2>
         <p>Fotos reais da infraestrutura em estágio avançado</p>
         
